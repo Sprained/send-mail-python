@@ -1,0 +1,15 @@
+version: '3.5'
+
+
+services:
+    db:
+        container_name: "lwo"
+        image: postgres
+        ports:
+            - "5432:5432"
+        env_file:
+            - .env
+        environment:
+            POSTGRES_USER: "lwo_admin"
+            POSTGRES_PASSWORD: "lwo-123"
+            POSTGRES_DB: "postgres"

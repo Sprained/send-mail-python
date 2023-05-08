@@ -1,0 +1,12 @@
+[run]
+omit =
+    tests/*
+    .venv/*
+    .vscode/*
+    .pytest_cache/*
+    ./utils/env.py
+    ./routes/*
+    ./main.py
+    ./logger.py
+    ./scripts.py
+    ./utils/database.py

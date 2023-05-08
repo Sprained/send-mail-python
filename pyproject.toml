@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "send-mail"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel Resende <gabriel.resende@terceiroslinx.com.br>"]
+readme = "README.md"
+packages = [{include = "./*"}]
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | \.migrations
+)/
+'''
+
+[tool.poetry.scripts]
+test = 'scripts:test_cov'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = {extras = ["all"], version = "^0.92.0"}
+uvicorn = "^0.20.0"
+alembic = "^1.9.4"
+psycopg2-binary = "^2.9.5"
+psycopg2 = "^2.9.6"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+pre-commit = "^3.0.4"
+pytest-cov = "^4.0.0"
+pytest-xdist = "^3.2.0"
+sqlalchemy-utils = "^0.40.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
